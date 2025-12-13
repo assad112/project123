@@ -85,6 +85,35 @@
                     android:layout_marginTop="4dp" />
             </LinearLayout>
 
+            <!-- Add Sample Data Button (Hidden by default) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addSampleDataButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add 5 Nurseries"
+                android:textColor="@color/accent_brown"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:visibility="visible"
+                app:icon="@drawable/ic_add"
+                app:iconGravity="textStart"
+                app:iconSize="16dp"
+                app:iconTint="@color/accent_brown"
+                app:iconPadding="4dp"
+                app:strokeColor="@color/accent_brown"
+                app:strokeWidth="2dp"
+                app:cornerRadius="20dp"
+                app:rippleColor="@color/accent_brown_light"
+                app:backgroundTint="@android:color/transparent"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/logoutButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <!-- Logout Button -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/logoutButton"

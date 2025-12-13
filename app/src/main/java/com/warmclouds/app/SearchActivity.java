@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +29,7 @@ public class SearchActivity extends AppCompatActivity {
     private EditText searchEditText;
     private Spinner priceSpinner, locationSpinner, ratingSpinner;
     private ProgressBar progressBar;
+    private TextView resultsCountTextView;
     
     private NurseryAdapter adapter;
     private List<Nursery> allNurseries;
@@ -51,6 +53,7 @@ public class SearchActivity extends AppCompatActivity {
         locationSpinner = findViewById(R.id.locationSpinner);
         ratingSpinner = findViewById(R.id.ratingSpinner);
         progressBar = findViewById(R.id.progressBar);
+        resultsCountTextView = findViewById(R.id.resultsCountTextView);
 
         // Setup RecyclerView
         nurseriesRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
@@ -173,6 +176,15 @@ public class SearchActivity extends AppCompatActivity {
             }
         }
         
+        updateResultsCount();
+    }
+    
+    private void updateResultsCount() {
+        int count = filteredNurseries.size();
+        String text = count == 1 ? "Found 1 nursery" : "Found " + count + " nurseries";
+        if (resultsCountTextView != null) {
+            resultsCountTextView.setText(text);
+        }
         adapter.notifyDataSetChanged();
     }
 }

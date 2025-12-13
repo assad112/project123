@@ -6,6 +6,14 @@
     <string name="welcome_subtitle">Welcome to Warm Clouds, your way to choose the perfect nursery for your child</string>
     <string name="get_started">Get Started</string>
     
+    <!-- Educational Slides -->
+    <string name="slide1_title">Find the Best Nursery</string>
+    <string name="slide1_description">Search and compare nurseries to find the perfect one for your child</string>
+    <string name="slide2_title">View Details &amp; Reviews</string>
+    <string name="slide2_description">See detailed information, photos, and reviews from other parents</string>
+    <string name="slide3_title">Book &amp; Pay Easily</string>
+    <string name="slide3_description">Reserve your child\'s spot and pay securely online</string>
+    
     <!-- Login Screen -->
     <string name="login_title">Login</string>
     <string name="login_as_parent">Login as Parent</string>

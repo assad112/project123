@@ -54,8 +54,8 @@ public class NurseryAdapter extends RecyclerView.Adapter<NurseryAdapter.NurseryV
         private TextView nameTextView;
         private TextView locationTextView;
         private TextView priceTextView;
-        private RatingBar ratingBar;
         private TextView ratingTextView;
+        private TextView ageGroupTextView;
 
         public NurseryViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -63,8 +63,8 @@ public class NurseryAdapter extends RecyclerView.Adapter<NurseryAdapter.NurseryV
             nameTextView = itemView.findViewById(R.id.nurseryNameTextView);
             locationTextView = itemView.findViewById(R.id.nurseryLocationTextView);
             priceTextView = itemView.findViewById(R.id.nurseryPriceTextView);
-            ratingBar = itemView.findViewById(R.id.nurseryRatingBar);
             ratingTextView = itemView.findViewById(R.id.nurseryRatingTextView);
+            ageGroupTextView = itemView.findViewById(R.id.ageGroupTextView);
 
             itemView.setOnClickListener(v -> {
                 int position = getAdapterPosition();
@@ -77,23 +77,37 @@ public class NurseryAdapter extends RecyclerView.Adapter<NurseryAdapter.NurseryV
         public void bind(Nursery nursery) {
             nameTextView.setText(nursery.getName());
             locationTextView.setText(nursery.getLocation());
-            priceTextView.setText(String.format("$%.0f", nursery.getRegistrationFee()));
             
+            // Format price with monthly indicator
+            double monthlyFee = nursery.getMonthlyFee() > 0 ? nursery.getMonthlyFee() : nursery.getRegistrationFee();
+            priceTextView.setText(String.format("$%.0f/mo", monthlyFee));
+            
+            // Show rating
             if (nursery.getRating() > 0) {
-                ratingBar.setRating((float) nursery.getRating());
                 ratingTextView.setText(String.format("%.1f", nursery.getRating()));
             } else {
-                ratingBar.setRating(0);
-                ratingTextView.setText("0.0");
+                ratingTextView.setText("New");
+            }
+            
+            // Show age groups
+            if (nursery.getAgeGroups() != null && !nursery.getAgeGroups().isEmpty()) {
+                // Convert List<String> to readable text (e.g., "1-2 years, 3-4 years")
+                String ageGroupText = String.join(", ", nursery.getAgeGroups());
+                // Limit text length for display
+                if (ageGroupText.length() > 20) {
+                    ageGroupText = ageGroupText.substring(0, 17) + "...";
+                }
+                ageGroupTextView.setText(ageGroupText);
+            } else {
+                ageGroupTextView.setText("All ages");
             }
 
             // Load image using ImageUtils
             if (nursery.getImages() != null && !nursery.getImages().isEmpty()) {
-                ImageUtils.loadRoundedImage(
+                ImageUtils.loadImage(
                         itemView.getContext(),
                         nursery.getImages().get(0),
-                        imageView,
-                        16 // corner radius in pixels
+                        imageView
                 );
             } else {
                 imageView.setImageResource(R.drawable.ic_nursery_empty);
