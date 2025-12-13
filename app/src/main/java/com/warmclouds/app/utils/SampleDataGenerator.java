@@ -88,7 +88,14 @@ public class SampleDataGenerator {
                 "Art & Music Classes"
         ));
         nursery1.setAgeGroups(Arrays.asList("1-2 years", "3-4 years", "5-6 years"));
-        nursery1.setFacilities("Modern air-conditioned classrooms, Large outdoor play area, Indoor activity room, Library corner, Art studio, Safe and secure environment with CCTV");
+        nursery1.setFacilities(Arrays.asList(
+                "Modern air-conditioned classrooms",
+                "Large outdoor play area",
+                "Indoor activity room",
+                "Library corner",
+                "Art studio",
+                "Safe and secure environment with CCTV"
+        ));
         nursery1.setActive(true);
         nurseries.add(nursery1);
 
@@ -117,7 +124,14 @@ public class SampleDataGenerator {
                 "Swimming Pool"
         ));
         nursery2.setAgeGroups(Arrays.asList("2-3 years", "4-5 years"));
-        nursery2.setFacilities("Colorful themed classrooms, Swimming pool (supervised), Large garden with slides and swings, Computer lab, Music room, Parent waiting area");
+        nursery2.setFacilities(Arrays.asList(
+                "Colorful themed classrooms",
+                "Swimming pool (supervised)",
+                "Large garden with slides and swings",
+                "Computer lab",
+                "Music room",
+                "Parent waiting area"
+        ));
         nursery2.setActive(true);
         nurseries.add(nursery2);
 
@@ -146,7 +160,14 @@ public class SampleDataGenerator {
                 "Drama & Theater"
         ));
         nursery3.setAgeGroups(Arrays.asList("18 months-2 years", "3-4 years", "5-6 years"));
-        nursery3.setFacilities("Montessori classrooms with learning materials, Science discovery corner, Drama and role-play area, Sandbox and water play, Reading nook, Secure entrance with access control");
+        nursery3.setFacilities(Arrays.asList(
+                "Montessori classrooms with learning materials",
+                "Science discovery corner",
+                "Drama and role-play area",
+                "Sandbox and water play",
+                "Reading nook",
+                "Secure entrance with access control"
+        ));
         nursery3.setActive(true);
         nurseries.add(nursery3);
 
@@ -175,7 +196,14 @@ public class SampleDataGenerator {
                 "Parent App Updates"
         ));
         nursery4.setAgeGroups(Arrays.asList("6 months-1 year", "2-3 years", "4-5 years"));
-        nursery4.setFacilities("Cozy age-appropriate rooms, Separate sleep area with comfortable cribs, Clean and hygienic facilities, Kitchen with organic meal preparation, Sensory play area, Safe outdoor space");
+        nursery4.setFacilities(Arrays.asList(
+                "Cozy age-appropriate rooms",
+                "Separate sleep area with comfortable cribs",
+                "Clean and hygienic facilities",
+                "Kitchen with organic meal preparation",
+                "Sensory play area",
+                "Safe outdoor space"
+        ));
         nursery4.setActive(true);
         nurseries.add(nursery4);
 
@@ -204,7 +232,14 @@ public class SampleDataGenerator {
                 "Annual Art Exhibition"
         ));
         nursery5.setAgeGroups(Arrays.asList("2-3 years", "3-4 years", "5-6 years"));
-        nursery5.setFacilities("Dedicated art studio with supplies, Music room with instruments, Performance stage for drama, Gallery wall for children's artwork, Creative play zones, Bright and inspiring spaces");
+        nursery5.setFacilities(Arrays.asList(
+                "Dedicated art studio with supplies",
+                "Music room with instruments",
+                "Performance stage for drama",
+                "Gallery wall for children's artwork",
+                "Creative play zones",
+                "Bright and inspiring spaces"
+        ));
         nursery5.setActive(true);
         nurseries.add(nursery5);
 
